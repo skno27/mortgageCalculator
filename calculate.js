@@ -1,7 +1,7 @@
 const resultText = document.getElementsByClassName("result-text")[0];
 
 // initialize monthly payment so that it can be changed
-let mPayment = 0;
+let mPayment;
 
 document.addEventListener("DOMContentLoaded", function () {
   // Find the form element by its ID
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let principal = propertyValue - downPayment;
     console.log("Mortgage Principal:", principal);
 
-    mPayment +=
+    mPayment =
       (principal * (rate / 12)) / (1 - (1 + rate / 12) ** (-12 * termInYears));
 
     console.log(mPayment);

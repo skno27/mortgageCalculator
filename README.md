@@ -1,6 +1,6 @@
 We had a Challenge in the Course Careers Discord to build a Mortgage Calculator
 
-I used HTML and CSS to build a simple layout, with appealing colors
+I used HTML and CSS to build a simple Interface with appealing colors
 
 I used Bootstrap for button styling
 
