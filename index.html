@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span style="font-weight: 800">Mortgage</span>
+        <i
+          class="fa fa-calculator"
+          style="font-size: 48px; color: red"></i
+        ><span style="font-weight: 100">Calculator</span>
+      </h1>
+    </header>
+
+    <div class="wrapper">
+      <h3 style="font-weight: 800">Please Enter Your Payment Details</h3>
+      <p style="font-style: italic; font-weight: 100">
+        Taxes, Fees, Interest, Principal & Balance
+      </p>
+
+      <div id="mortgage">
+        <div
+          id="input"
+          class="centered">
+          <form
+            id="calc_entry"
+            action="">
+            <div class="input-div">
+              <span>
+                <label for="propvalue">Property Value: $ </label>
+                <input
+                  type="text"
+                  name="propvalue" />
+              </span>
+            </div>
+
+            <div class="input-div">
+              <span>
+                <label for="dwnpayment">Down Payment: $</label>
+                <input
+                  type="text"
+                  name="dwnpayment" />
+              </span>
+            </div>
+
+            <div class="input-div">
+              <span>
+                <label for="interest">Interest Rate: </label>
+                <input
+                  type="text"
+                  name="interest" /><span> %</span>
+              </span>
+            </div>
+
+            <div class="input-div">
+              <button
+                class="btn btn-primary"
+                href="https://my.consumeraffairs.com/mortgage-lenders/?theme=mortgagerates&conaffid=%7b%22a%22%3a%22ca%22%2c%22s%22%3a%22g%22%2c%22m%22%3a%22pt%22%2c%22acc%22%3a%22848-479-6459%22%2c%22cid%22%3a%2212179344038%22%2c%22agid%22%3a%22124024089550%22%2c%22fid%22%3a%22%22%2c%22tid%22%3a%22kwd-16231931%22%2c%22li%22%3a%22%22%2c%22lp%22%3a%229021520%22%2c%22gclid%22%3a%22CjwKCAiAiP2tBhBXEiwACslfnvDcr8gOVxnXksgm3bkSBzwapHLMuG2lBhLBb7jt7YU_m6LWAtF7HhoC2yQQAvD_BwE%22%2c%22mtp%22%3a%22e%22%2c%22de%22%3a%22c%22%2c%22nw%22%3a%22g%22%2c%22crtv%22%3a%22644338873626%22%2c%22kd%22%3a%22mortgage%20rates%22%2c%22plcm%22%3a%22%22%2c%22tgt%22%3a%22%22%2c%22ap%22%3a%22%22%2c%22ge%22%3a%22%22%7d&gad_source=1&gclid=CjwKCAiAiP2tBhBXEiwACslfnvDcr8gOVxnXksgm3bkSBzwapHLMuG2lBhLBb7jt7YU_m6LWAtF7HhoC2yQQAvD_BwE"
+                target="_blank">
+                See Some Common Rates
+              </button>
+            </div>
+
+            <div class="input-div">
+              <span>
+                <label for="term">Loan Term: </label>
+                <input
+                  type="text"
+                  name="term" /><span> Years</span>
+              </span>
+            </div>
+
+            <div class="input-div">
+              <span>
+                <input
+                  type="submit"
+                  value="Calculate" />
+              </span>
+            </div>
+            <!-- end form -->
+          </form>
+        </div>
+
+        <div
+          id="output"
+          class="centered">
+          <h1>Monthly Payments</h1>
+          <div id="result">
+            <span class="result-text"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <script src="./calculate.js"></script>
+  </body>
+</html>
