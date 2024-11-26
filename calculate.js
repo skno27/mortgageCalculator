@@ -1,21 +1,19 @@
 const resultText = document.getElementsByClassName("result-text")[0];
-
-// initialize monthly payment so that it can be changed
-let mPayment;
+const totalFields = document.getElementsByClassName("total-text");
+const totalInterest = totalFields[0];
+const adjustedTotal = totalFields[1];
 
 document.addEventListener("DOMContentLoaded", function () {
   // Find the form element by its ID
-  var form = document.getElementById("calc_entry");
+  const form = document.getElementById("calc_entry");
 
-  // submit listener
+  // Submit listener
   form.addEventListener("submit", function (event) {
-    // prevent default
+    // Prevent default
     event.preventDefault();
 
     if (event.submitter && event.submitter.value === "Calculate") {
-      // access form elements
-
-      // main vars
+      // Access form elements
       const propertyValue = parseFloat(
         document.getElementsByName("propvalue")[0].value
       );
@@ -28,22 +26,43 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementsByName("term")[0].value
       );
 
-      // log values
-      console.log("Property Value:", propertyValue);
-      console.log("Down Payment:", downPayment);
-      console.log("Interest Rate:", rate);
-      console.log("Term in Years:", termInYears);
+      // Checks
+      if (
+        isNaN(propertyValue) ||
+        isNaN(downPayment) ||
+        isNaN(rate) ||
+        isNaN(termInYears)
+      ) {
+        resultText.innerHTML = "Please enter valid numeric values.";
+        totalInterest.innerHTML = "$0.00";
+        adjustedTotal.innerHTML = "$0.00";
+        return;
+      }
 
-      let principal = propertyValue - downPayment;
-      console.log("Mortgage Principal:", principal);
+      if (downPayment > propertyValue) {
+        resultText.innerHTML = "Down payment cannot exceed property value.";
+        totalInterest.innerHTML = "$0.00";
+        adjustedTotal.innerHTML = "$0.00";
+        return;
+      }
 
-      mPayment =
-        (principal * (rate / 12)) /
-        (1 - (1 + rate / 12) ** (-12 * termInYears));
+      const principal = propertyValue - downPayment;
+      const monthlyRate = rate / 12;
+      const totalPayments = termInYears * 12;
 
-      console.log(mPayment);
-      console.log(mPayment.toFixed(2));
-      resultText.innerHTML = "$" + `${mPayment.toFixed(2)}`;
+      // Calculate Monthly Payment
+      const mPayment =
+        (principal * monthlyRate) /
+        (1 - Math.pow(1 + monthlyRate, -totalPayments));
+
+      // Calculate Total Interest and Adjusted Total
+      const totalPayment = mPayment * totalPayments;
+      const totalInterestAmount = totalPayment - principal;
+
+      // Update Displayed Results
+      resultText.innerHTML = `$${mPayment.toFixed(2)}`;
+      totalInterest.innerHTML = `$${totalInterestAmount.toFixed(2)}`;
+      adjustedTotal.innerHTML = `$${totalPayment.toFixed(2)}`;
     }
   });
 });

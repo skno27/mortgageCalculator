@@ -1,124 +1,150 @@
-
-
 body {
-    background-color: white;
-    display: block;
+  background-color: white;
+  display: block;
 }
 
 header {
-    background-color: aqua;
-    padding: 10px 20px 10px 20px;
+  background-color: aqua;
+  padding: 10px 20px 10px 20px;
 }
 
 .wrapper {
-    margin: 10% 25% 5% 25%;
+  margin: 10% 25% 5% 25%;
 }
 
 #mortgage {
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: blueviolet;
-    display: flex;
-
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: blueviolet;
+  display: flex;
 }
 
 #input {
-    width: 50%;
-    border-right: 1px solid black;
-    padding: 0;
-    box-sizing: border-box;
+  width: 50%;
+  border-right: 1px solid black;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #calc_entry {
-    width: 100%;
+  width: 100%;
 }
 
-
-
 #input :last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .centered {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #output {
-    width: 50%;
+  width: 50%;
 
-    border-left: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .input-div {
-    background-color: gainsboro;
-    margin-bottom: 1px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: gainsboro;
+  margin-bottom: 1px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #result {
-    /* border: 2px solid black; */
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* border: 2px solid black; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #output h1 {
-    padding-bottom: 10px;
-    border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
 }
 
 .result-text {
-    color: whitesmoke;
-    font-size: 60px;
-    font-weight: 800;
+  color: whitesmoke;
+  font-size: 60px;
+  font-weight: 800;
+}
+
+#totals-div {
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 150px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+#separator {
+  border: 1px solid black;
+  height: 100%;
+}
+
+.total {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#interest-total-div {
+  background-color: blueviolet;
+}
+
+#full-total-div {
+  background-color: gainsboro;
 }
 
 footer {
-    /* border: 2px solid black; */
-    display: flex;
-    justify-content: center;
-    margin-top: 230px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: .5em;
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: center;
+  margin-top: 230px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.5em;
 }
 
 #artist {
-    font-weight: 900;
-    font-style: oblique;
+  font-weight: 900;
+  font-style: oblique;
 }
 
-
 @media only screen and (max-width: 767px) {
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    .wrapper {
-        margin: 5% 5%;
-        width: 90%;
-        height: auto;
-        /* border: 1px solid gray; */
-    }
-    #mortgage {
-        flex-direction: column; /* Stack elements vertically on small screens */
-        border: 1px solid gray;
-        /* margin: 0; */
-    }
-    #input, #output {
-        width: 100%;
-        border: none;
-    }
-    #output {
-        padding: 100px;
-    }
-    #output span {
-        text-wrap: pretty;
-    }
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .wrapper {
+    margin: 5% 5%;
+    width: 90%;
+    height: auto;
+    /* border: 1px solid gray; */
+  }
+  #mortgage {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    border: 1px solid gray;
+    /* margin: 0; */
+  }
+  #input,
+  #output {
+    width: 100%;
+    border: none;
+  }
+  #output {
+    padding: 100px;
+  }
+  #output span {
+    text-wrap: pretty;
+  }
 }
