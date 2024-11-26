@@ -12,33 +12,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // prevent default
     event.preventDefault();
 
-    // access form elements
+    if (event.submitter && event.submitter.value === "Calculate") {
+      // access form elements
 
-    // main vars
-    const propertyValue = parseFloat(
-      document.getElementsByName("propvalue")[0].value
-    );
-    const downPayment = parseFloat(
-      document.getElementsByName("dwnpayment")[0].value
-    );
-    const rate =
-      parseFloat(document.getElementsByName("interest")[0].value) / 100;
-    const termInYears = parseFloat(document.getElementsByName("term")[0].value);
+      // main vars
+      const propertyValue = parseFloat(
+        document.getElementsByName("propvalue")[0].value
+      );
+      const downPayment = parseFloat(
+        document.getElementsByName("dwnpayment")[0].value
+      );
+      const rate =
+        parseFloat(document.getElementsByName("interest")[0].value) / 100;
+      const termInYears = parseFloat(
+        document.getElementsByName("term")[0].value
+      );
 
-    // log values
-    console.log("Property Value:", propertyValue);
-    console.log("Down Payment:", downPayment);
-    console.log("Interest Rate:", rate);
-    console.log("Term in Years:", termInYears);
+      // log values
+      console.log("Property Value:", propertyValue);
+      console.log("Down Payment:", downPayment);
+      console.log("Interest Rate:", rate);
+      console.log("Term in Years:", termInYears);
 
-    let principal = propertyValue - downPayment;
-    console.log("Mortgage Principal:", principal);
+      let principal = propertyValue - downPayment;
+      console.log("Mortgage Principal:", principal);
 
-    mPayment =
-      (principal * (rate / 12)) / (1 - (1 + rate / 12) ** (-12 * termInYears));
+      mPayment =
+        (principal * (rate / 12)) /
+        (1 - (1 + rate / 12) ** (-12 * termInYears));
 
-    console.log(mPayment);
-    console.log(mPayment.toFixed(2));
-    resultText.innerHTML = "$" + `${mPayment.toFixed(2)}`;
+      console.log(mPayment);
+      console.log(mPayment.toFixed(2));
+      resultText.innerHTML = "$" + `${mPayment.toFixed(2)}`;
+    }
   });
 });
